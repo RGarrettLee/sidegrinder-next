@@ -18,3 +18,9 @@ export default function Login() {
         </div>
     )
 }
+
+export async function getServerSideProps() {
+    return {
+      props: {}
+    }
+  }
