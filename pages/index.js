@@ -1,4 +1,3 @@
-import Navbar from '../components/navbar';
 import RandomClip from '../components/randomClip';
 
 export default function Home() {
