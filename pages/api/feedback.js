@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Navbar from '../components/navbar';
 
 export default function Feedback() {
     const [feedback, setFeedback] = useState('');
