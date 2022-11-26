@@ -5,12 +5,12 @@ import supabase from "../db/connection";
 export default function logout() {
     const router = useRouter();
 
-    async function signout() {
-        const { error } = await supabase.auth.signOut()
-        router.reload(window.location.pathname);
-    }
-
       useEffect(() => {
+        async function signout() {
+          const { error } = await supabase.auth.signOut()
+          router.reload(window.location.pathname);
+        }
+
         signout();
       }, [])
 
