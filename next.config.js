@@ -2,7 +2,6 @@
 
 module.exports = {
   trailingSlash: true,
-  reactStrictMode: true,
   async redirects() {
     return [
       {
