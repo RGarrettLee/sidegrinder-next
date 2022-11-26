@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Navbar from '../components/navbar';
 
 export default function Feedback() {
@@ -20,7 +20,6 @@ export default function Feedback() {
 
     return (
         <div>
-            <Navbar></Navbar>
             <div className="flex justify-center align-center py-15 flex-col">
                 <h1 className="text-3xl font-bold text-center">Help us improve</h1>
             </div>

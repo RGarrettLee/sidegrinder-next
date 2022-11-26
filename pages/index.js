@@ -1,15 +1,10 @@
-import { QueryClient, QueryClientProvider } from 'react-query';
-
 import Navbar from '../components/navbar';
 import RandomClip from '../components/randomClip';
 
-const queryClient = new QueryClient();
-
 export default function Home() {
+
   return (
-    <QueryClientProvider client={ queryClient }>
       <div>
-        <Navbar></Navbar>
         <div className="flex justify-center align-center flex-col pb-20">
           <h1 className="text-3xl text-center font-bold">Sidegrinder.APP</h1>
         </div>
@@ -18,6 +13,5 @@ export default function Home() {
           <h1 className="pt-20 text-center text-2xl">⚠️ Site Under Development ⚠️</h1>
         </div>
     </div>
-    </QueryClientProvider>
   )
 }
