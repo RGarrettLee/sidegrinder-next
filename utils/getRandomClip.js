@@ -7,14 +7,7 @@ async function getRandomClip() {
         .from('clips')
         .select('url')
 
-        let clips = [];
-        for (let i = 0; i < data['data'].length; ++i) {
-            clips.push(data['data'][i]['url']);
-        }
-
-        console.log(clips);
-
-        return clips[Math.floor(Math.random() * clips.length)];
+        return data['data'][Math.floor(Math.random() * data['data'].length)]['url'];
     } catch (error) {
         console.log(`There was an error: ${error}`);
     }
