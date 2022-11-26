@@ -2,7 +2,6 @@ import supabase from '../db/connection';
 
 async function getRandomClip() {
     try {
-        console.log('trying to get clip');
         const data = await supabase
         .from('clips')
         .select('url')
