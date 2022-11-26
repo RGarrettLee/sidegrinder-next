@@ -3,9 +3,9 @@ import { useRouter } from 'next/router';
 import supabase from "../db/connection";
 
 export default function Logout() {
-      useEffect(() => {
-        const router = useRouter();
+      const router = useRouter();
 
+      useEffect(() => {
         async function signout() {
           const { error } = await supabase.auth.signOut()
           router.reload(window.location.pathname);
