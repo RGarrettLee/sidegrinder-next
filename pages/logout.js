@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import supabase from "../db/connection";
 
-export default function logout() {
+export default function Logout() {
     const router = useRouter();
 
       useEffect(() => {
