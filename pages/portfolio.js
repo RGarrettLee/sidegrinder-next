@@ -1,5 +1,4 @@
-import Navbar from '../components/navbar';
-import supabase from '../db/connection';
+import { useEffect, useState } from 'react';
 
 export default function Portfolio() {
     return (
