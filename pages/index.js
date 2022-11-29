@@ -10,6 +10,7 @@ export default function Home() {
         <RandomClip></RandomClip>
         <div className="flex justify-center flex-col">
           <h1 className="pt-20 text-center text-2xl">⚠️ Site Under Development ⚠️</h1>
+          <h1 className="text-center text-md font-thin">Cry at the lack of mobile support</h1>
         </div>
     </div>
   )

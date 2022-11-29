@@ -16,7 +16,7 @@ const Navbar = function() {
             })
         }
         getUser();
-    }, [user])
+    }, [])
 
     return (
     <>
