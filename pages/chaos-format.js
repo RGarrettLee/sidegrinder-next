@@ -48,7 +48,7 @@ export default function ChaosFormat() {
                 cardCount.id += 1;
 
                 if (cardCount.id == 3) {
-                    mdPool.splice(random, 1);
+                    edPool.splice(random, 1);
                 }
             } else {
                 cardCount.id = 1;
