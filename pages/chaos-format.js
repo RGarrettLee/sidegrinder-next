@@ -40,9 +40,10 @@ export default function ChaosFormat() {
 
         console.log('\nExtra Deck:');
         for (let i = 0; i < 15; i++) { // create extra deck
-            let random = [Math.floor(Math.random() * extraDeck.length)];
-            let id = extraDeck[random].card_id;
-            console.log(extraDeck[random].name);
+            let random = [Math.floor(Math.random() * edPool.length)];
+            let id = edPool[random].card_id;
+
+            console.log(edPool[random].name);
 
             if (Object.keys(cardCount).includes(id)) {
                 cardCount.id += 1;
