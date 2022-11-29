@@ -122,7 +122,7 @@ export default function SearchCard({ cardList }) {
                     <></>
                 ) : (
                     <div className="mt-8">
-                        <img src={card.card_images[0].image_url}></img>
+                        <img src={card.card_images[0].image_url} alt="card image"></img>
 
                         {allCards.includes(card.name) ? (
                             <button onClick={removeCard} className="mt-4 bg-red-600 hover:bg-red-500 rounded rounded-border px-2 py-1">Remove card</button>

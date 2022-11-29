@@ -15,8 +15,8 @@ export default function ProjectCard({ project }) {
                 </p>
             </div>
             <div className="px-6 pt-4">
-                <a href={repo} target="_blank"><span className="inline-block mr-2 bg-gray-700 hover:bg-gray-500 text-white font-semibold py-2 px-4 border border-gray-600 rounded shadow">GitHub</span></a>
-                <a href={deployment} target="_blank"><span className="inline-block bg-gray-700 hover:bg-gray-500 text-white font-semibold py-2 px-4 border border-gray-600 rounded shadow">Deployed Link</span></a>
+                <a href={repo} target="_blank" rel="noreferrer"><span className="inline-block mr-2 bg-gray-700 hover:bg-gray-500 text-white font-semibold py-2 px-4 border border-gray-600 rounded shadow">GitHub</span></a>
+                <a href={deployment} target="_blank" rel="noreferrer"><span className="inline-block bg-gray-700 hover:bg-gray-500 text-white font-semibold py-2 px-4 border border-gray-600 rounded shadow">Deployed Link</span></a>
             </div>
             <div className="px-6 pt-4 pb-2">
                 {tags.map((tag, index) => (
