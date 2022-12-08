@@ -62,6 +62,9 @@ export default function SearchCard({ cardList }) {
                 case 'Synchro Monster':
                     type = card.type.replace('Synchro Monster', 'Monster/Synchro');
                     break;
+                case 'Synchro Tuner Monster':
+                    type = card.type.replace('Synchro Tuner Monster', 'Monster/Synchro/Tuner');
+                    break;
                 case 'XYZ Monster':
                     type = card.type.replace('XYZ Monster', 'Monster/Xyz');
                     break;
