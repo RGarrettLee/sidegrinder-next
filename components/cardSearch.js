@@ -59,11 +59,11 @@ export default function SearchCard({ cardList }) {
                 case 'Flip Effect Monster':
                     type = card.type.replace('Flip Effect Monster', 'Monster/Flip');
                     break;
-                case 'Synchro Monster':
-                    type = card.type.replace('Synchro Monster', 'Monster/Synchro');
-                    break;
                 case 'Synchro Tuner Monster':
                     type = card.type.replace('Synchro Tuner Monster', 'Monster/Synchro/Tuner');
+                    break;
+                case 'Synchro Monster':
+                    type = card.type.replace('Synchro Monster', 'Monster/Synchro');
                     break;
                 case 'XYZ Monster':
                     type = card.type.replace('XYZ Monster', 'Monster/Xyz');
