@@ -12,17 +12,6 @@ export default function CreateStack() {
       setSearch(event.target.value);
    }
 
-   function cacheStacks(name, url, response) {
-      const data = new Response(JSON.stringify(response));
-
-      if ('caches' in window) {
-         caches.open(name).then((cache) => {
-            cache.put(url, data);
-            alert('cached stacks');
-         });
-      }
-   }
-
    async function cardSearch(e) {
       e.preventDefault()
       fetch(`${apiEndpoint}${search}`)
@@ -49,8 +38,6 @@ export default function CreateStack() {
       newStack.splice(index, 1);
       setStack([...newStack]);
    }
-
-   useEffect(() => {}, [stack])
 
    return (
       <div className="block mt-4">
