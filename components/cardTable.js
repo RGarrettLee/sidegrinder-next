@@ -65,7 +65,7 @@ export default function CardTable({ cards }) {
                     }
                 }
             }
-            setList(officialList);
+            setList([...officialList]);
         }
 
         sortCards();
