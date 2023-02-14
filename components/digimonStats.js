@@ -68,7 +68,7 @@ export default function DigimonStats({ method }) {
          {stats.map((stat, index) => (
             <div key={index} className='flex flex-col justify-center'>
                <label className='mx-2 text-center' htmlFor='AP-Slider'>{currentState(index)}</label>
-               <input className='mx-2 md:mb-2'id='AP-Slider' onChange={() => changeSlider(index)} type='range' min='0' max={getRange(stat)} defaultValue='0' step='1'></input>
+               <input className='mx-2 mb-2 md:mb-0'id='AP-Slider' onChange={() => changeSlider(index)} type='range' min='0' max={getRange(stat)} defaultValue='0' step='1'></input>
             </div>
          ))}
       </>
