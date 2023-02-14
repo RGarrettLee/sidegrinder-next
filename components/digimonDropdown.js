@@ -5,7 +5,6 @@ import supabase from '../db/connection';
 export default function DigimonDropdown({ digiList, pos, trees, setTrees }) { // track evolution stage by length of stacks?
 
    const [digimon, setDigimon] = useState([]);
-   const link = 'https://i.imgur.com/miybl8g.gif';
 
    async function chooseDigimon(digi, index) { // get evolutions then create dropdown menu of those evolutions, or pass to parent? put child on stack then do the same arr.find there?
       console.log(`chose ${digi} to start`);

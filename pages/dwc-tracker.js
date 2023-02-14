@@ -79,10 +79,6 @@ export default function DWCTracker() {
       setTrees([...newTrees]);
    }
 
-   function testState() {
-      console.log(trees);
-   }
-
    return (
       <>
          <div className='flex justify-center align-center flex-col'>
@@ -113,7 +109,6 @@ export default function DWCTracker() {
                </div>
             ))}
          </div>
-         <button className='rounded-md bg-gray-500 p-2 hover:bg-gray-400' onClick={testState}>Test State</button>
       </>
    )
 }
