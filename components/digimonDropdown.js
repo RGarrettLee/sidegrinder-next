@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react';
 import { Menu } from '@headlessui/react';
 import supabase from '../db/connection';
 
-export default function DigimonDropdown({ digiList, pos, trees, setTrees }) { // track evolution stage by length of stacks?
+export default function DigimonDropdown({ digiList, pos, trees, setTrees }) {
 
    const [digimon, setDigimon] = useState([]);
 
-   async function chooseDigimon(digi, index) { // get evolutions then create dropdown menu of those evolutions, or pass to parent? put child on stack then do the same arr.find there?
+   async function chooseDigimon(digi, index) {
       console.log(`chose ${digi} to start`);
       if (digiList[0] != 'Zurumon') {
          // treat as existing stack

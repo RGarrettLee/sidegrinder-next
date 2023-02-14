@@ -16,8 +16,7 @@ FLOW OF THE PAGE
 */
 
 //TODO
-// finish rookie, champion, ultimate, mega options on digivolution
-// continue from candlemon
+// add stat tracking
 
 export default function DWCTracker() {
    const [digimon, setDigimon] = useState([]);
@@ -49,13 +48,6 @@ export default function DWCTracker() {
 
       getDigimon();
    }, [])
-
-   function newDigimon() {
-      console.log('generating new digimon...');
-      let nd = digimon;
-      setDigimon(nd);
-      console.log(digimon);
-   }
 
    function getEvolutionOptions(tree) {
       let digi = tree[tree.length - 1];
