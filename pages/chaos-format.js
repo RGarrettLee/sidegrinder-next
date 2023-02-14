@@ -100,7 +100,7 @@ export default function ChaosFormat() {
     return (
         <>
             <h1 className="text-center text-2xl">Chaos Format</h1>
-            <h1 className="text-center text-md font-light">Card list & Deck Generation</h1>
+            <p className="text-center text-md font-light">Card list & Deck generation</p>
             <button onClick={generateDeck} className="block mt-4 mb-8 mx-auto bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-gray-500 rounded">Generate Deck</button>
             <div className="grid xl:grid-cols-3 lg:grid-rows justify-center gap-4"> {/* auth for search card otherwise display Only authorized users can add cards */}
                 <SearchCard cardList={cards}></SearchCard>

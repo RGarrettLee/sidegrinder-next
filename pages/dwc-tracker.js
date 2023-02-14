@@ -1,5 +1,6 @@
 import { useEffect, useState} from 'react';
 import supabase from '../db/connection';
+import DigimonStats from '../components/digimonStats';
 import DigimonDropdown from '../components/digimonDropdown';
 
 /*
@@ -51,7 +52,6 @@ export default function DWCTracker() {
 
    function getEvolutionOptions(tree) {
       let digi = tree[tree.length - 1];
-      console.log(`Oldest: ${digi}`);
       let evos = digimon.find(d => d.name === digi).evolutions;
       return Object.keys(evos); // pass evo methods as well or display them on tree rather than in dropdown
    }
@@ -84,6 +84,7 @@ export default function DWCTracker() {
       <>
          <div className='flex justify-center align-center flex-col'>
             <h1 className='text-center text-2xl'>Digimon World Championship Tracker</h1>
+            <p className='text-center text-md font-light'>Track digivolutions with ease</p>
             <DigimonDropdown digiList={freshDigimon} trees={trees} setTrees={setTrees}></DigimonDropdown>
          </div>
          <div className='mt-10 grid grid-flow-row auto-rows-auto'>
@@ -101,12 +102,14 @@ export default function DWCTracker() {
                                     <img src={digimon.find(d => d.name === stage).gif} alt='gif'/>
                                     <button className="hover:cursor-default">{stage}</button>
                                     <button className='hover:cursor-default font-normal px-2'>{getEvolutionMethod(stage, tree, pos)}</button>
+                                    {/* create component for stat tracking (state and css) */}
+                                    <DigimonStats method={getEvolutionMethod(stage, tree, pos)}></DigimonStats>
                                     <button onClick={() => removeDigimon(index, pos)} className="mx-2 bg-red-600 hover:bg-red-500 rounded rounded-border px-2 py-1">Remove Digimon</button>
                               </li>
                            </div>
                         ))}
                      </ul>
-                     <button onClick={() => removeTree(index)} className="mx-2 mt-3 bg-red-600 hover:bg-red-500 rounded rounded-border px-2 py-1">Remove tree</button>
+                     <button onClick={() => removeTree(index)} className="mx-2 mt-3 mb-6 bg-red-600 hover:bg-red-500 rounded rounded-border px-2 py-1">Remove tree</button>
                   </div>
                </div>
             ))}
