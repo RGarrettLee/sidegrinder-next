@@ -17,8 +17,12 @@ export default function CreateStack() {
       fetch(`${apiEndpoint}${search}`)
          .then((response) => response.json())
          .then((cardData) => {
-            setCard(cardData[0]);
             console.log(cardData[0]);
+            if (cardData[0] == undefined) {
+               setCard({});
+            } else {
+               setCard(cardData[0]);
+            }
          })
          .catch((error) => {
             console.log(error);

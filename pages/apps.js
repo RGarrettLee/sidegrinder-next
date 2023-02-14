@@ -7,9 +7,9 @@ export default function Apps() {
    useEffect(() => {
       setApps([
          {link: 'chaos-format', name: 'Chaos Format'},
-         {link: 'proxy-deck', name: 'Proxy Tracking'}
-         /*{link: 'memory-gauge', name: 'Memory Gauge'}
-         {link: 'dwc-tracker', name: 'Digimon World Championship Tracker'}*/
+         {link: 'proxy-deck', name: 'Proxy Tracking'},
+         {link: 'dwc-tracker', name: 'Digimon World Championship Tracker'}
+         // {link: 'memory-gauge', name: 'Memory Gauge'}
       ])
    }, []);
 
@@ -19,7 +19,7 @@ export default function Apps() {
          <div className="flex justify-center">
             <ul className="text-center mt-5">
                {apps.map((app, index) => (
-                  <div key={`card ${index}`}>
+                  <div key={`app ${index}`}>
                      <Link href={app.link}><li className="hover:text-blue-200 font-light text-xl">{app.name}</li></Link>
                   </div>
                ))}

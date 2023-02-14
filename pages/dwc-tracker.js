@@ -1,5 +1,6 @@
 import { useEffect, useState} from 'react';
 import supabase from '../db/connection';
+import DigimonDropdown from '../components/digimonDropdown';
 
 /*
 
@@ -14,10 +15,40 @@ FLOW OF THE PAGE
 
 */
 
+//TODO
+// finish rookie, champion, ultimate, mega options on digivolution
+// continue from candlemon
+
 export default function DWCTracker() {
    const [digimon, setDigimon] = useState([]);
+   const [freshDigimon, setFreshDigimon] = useState([]);
+   const [trees, setTrees] = useState([]);
 
-   useEffect(() => {})
+   useEffect(() => {
+      setFreshDigimon([
+         'Zurumon',
+         'Choromon',
+         'Nyokimon',
+         'Pabumon',
+         'Pichimon',
+         'Petitmon',
+         'Punimon',
+         'Botamon',
+         'Poyomon',
+         'Mokumon',
+         'YukimiBotamon',
+         'Yuramon'
+      ])
+
+      async function getDigimon() {
+         const data = await supabase.from('digimon').select('name, gif, evolutions')
+         .then((result) => {
+            setDigimon([...result['data']]);
+         })
+      }
+
+      getDigimon();
+   }, [])
 
    function newDigimon() {
       console.log('generating new digimon...');
@@ -26,13 +57,63 @@ export default function DWCTracker() {
       console.log(digimon);
    }
 
+   function getEvolutionOptions(tree) {
+      let digi = tree[tree.length - 1];
+      console.log(`Oldest: ${digi}`);
+      let evos = digimon.find(d => d.name === digi).evolutions;
+      return Object.keys(evos); // pass evo methods as well or display them on tree rather than in dropdown
+   }
+
+   function getEvolutionMethod(digi, tree, index) {
+      // take ${digi} and find the evolution methods of the next digimon in the tree
+      if (index > 0) {
+         let evolutions = digimon.find(d => d.name === tree[index - 1]).evolutions;
+         let nextStage = Object.keys(evolutions).find(d => d === digi);
+         return evolutions[nextStage];
+      }
+   }
+
+   function removeTree(index) {
+      let newTrees = trees;
+      newTrees.splice(index, 1);
+      setTrees([...newTrees]);
+   }
+
+   function testState() {
+      console.log(trees);
+   }
+
    return (
       <>
          <div className='flex justify-center align-center flex-col'>
             <h1 className='text-center text-2xl'>Digimon World Championship Tracker</h1>
-            <button onClick={newDigimon} className='block mx-auto mt-4 bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-gray-500 rounded'>New Digimon</button>
-            <p className='text-center mt-5 font-thin text-xl'>WIP</p>
+            <DigimonDropdown digiList={freshDigimon} trees={trees} setTrees={setTrees}></DigimonDropdown>
          </div>
+         <div className='mt-10 grid grid-flow-row auto-rows-auto'>
+            {/* create grid for existing evo stacks displaying gif, name, evo method, (and a way to track?) */}
+            {/* display new stage button and current stack */}
+            {trees.map((tree, index) => (
+               <div key={index}>
+                  <DigimonDropdown digiList={getEvolutionOptions(tree)} pos={index} trees={trees} setTrees={setTrees}></DigimonDropdown>
+                  <div className="flex flex-col items-center">
+                     <ul className='flex flex-col items-center w-auto mt-4 py-2 px-3 bg-gray-900 rounded-lg'>
+                        {tree.map((stage, pos) => (
+                           <div key={pos} className='w-auto text-xl font-thin'>
+                              <li className="inline-flex">
+                                 {/* use digimon.find to get evolutions, then check evolutions for the next stage in evolution and then display that method */}
+                                    <img src={digimon.find(d => d.name === stage).gif} alt='gif'/>
+                                    <button className="hover:cursor-default">{stage}</button>
+                                    <button className='hover:cursor-default font-normal px-2'>{getEvolutionMethod(stage, tree, pos)}</button>
+                              </li>
+                           </div>
+                        ))}
+                     </ul>
+                     <button onClick={() => removeTree(index)} className="mx-2 mt-3 bg-red-600 hover:bg-red-500 rounded rounded-border px-2 py-1">Remove tree</button>
+                  </div>
+               </div>
+            ))}
+         </div>
+         <button className='rounded-md bg-gray-500 p-2 hover:bg-gray-400' onClick={testState}>Test State</button>
       </>
    )
 }
