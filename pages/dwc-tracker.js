@@ -79,6 +79,15 @@ export default function DWCTracker() {
       setTrees([...newTrees]);
    }
 
+   function removeDigimon(tree, index) {
+      let newTrees = trees;
+      newTrees[tree].splice(index);
+      if (newTrees[tree].length === 0) {
+         newTrees.splice(tree, 1);
+      }
+      setTrees([...newTrees])
+   }
+
    return (
       <>
          <div className='flex justify-center align-center flex-col'>
@@ -100,6 +109,7 @@ export default function DWCTracker() {
                                     <img src={digimon.find(d => d.name === stage).gif} alt='gif'/>
                                     <button className="hover:cursor-default">{stage}</button>
                                     <button className='hover:cursor-default font-normal px-2'>{getEvolutionMethod(stage, tree, pos)}</button>
+                                    <button onClick={() => removeDigimon(index, pos)} className="mx-2 bg-red-600 hover:bg-red-500 rounded rounded-border px-2 py-1">Remove Digimon</button>
                               </li>
                            </div>
                         ))}
