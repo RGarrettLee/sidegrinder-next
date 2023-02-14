@@ -97,9 +97,9 @@ export default function DWCTracker() {
                      <ul className='flex flex-col items-center w-auto mt-4 py-2 px-3 bg-gray-900 rounded-lg'>
                         {tree.map((stage, pos) => (
                            <div key={pos} className='w-auto text-xl font-thin'>
-                              <li className="inline-flex">
+                              <li className="md:inline-flex grid grid-rows align-center my-1 md:my-0">
                                  {/* use digimon.find to get evolutions, then check evolutions for the next stage in evolution and then display that method */}
-                                    <img src={digimon.find(d => d.name === stage).gif} alt='gif'/>
+                                    <img className="hidden md:block" src={digimon.find(d => d.name === stage).gif} alt='gif'/>
                                     <button className="hover:cursor-default">{stage}</button>
                                     <button className='hover:cursor-default font-normal px-2'>{getEvolutionMethod(stage, tree, pos)}</button>
                                     {/* create component for stat tracking (state and css) */}

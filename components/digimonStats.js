@@ -55,8 +55,6 @@ export default function DigimonStats({ method }) {
       console.log(value);
       curr[index] = value;
       setCurrent([...curr]);
-      //curr[index] = event.target.value;
-      //setCurrent([...current]);
    }
 
    function currentState(index) {
@@ -69,8 +67,8 @@ export default function DigimonStats({ method }) {
       <>
          {stats.map((stat, index) => (
             <div key={index} className='flex flex-col justify-center'>
-               <label className='mx-2' htmlFor='AP-Slider'>{currentState(index)}</label>
-               <input className='mx-2' id='AP-Slider' onChange={() => changeSlider(index)} type='range' min='0' max={getRange(stat)} defaultValue='0' step='1'></input>
+               <label className='mx-2 text-center' htmlFor='AP-Slider'>{currentState(index)}</label>
+               <input className='mx-2'id='AP-Slider' onChange={() => changeSlider(index)} type='range' min='0' max={getRange(stat)} defaultValue='0' step='1'></input>
             </div>
          ))}
       </>
