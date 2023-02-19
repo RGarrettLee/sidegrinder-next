@@ -3,7 +3,7 @@ export default function ProjectCard({ project }) {
     const { name, description, preview, repo, deployment, tags } = project;
 
     return (
-        <div className="max-w-sm sm:w-auto rounded-lg overflow-hidden shadow-lg bg-slate-800">
+        <div className="max-w-sm sm:w-auto rounded-lg overflow-hidden shadow-md bg-gradient-to-t from-slate-800 to-slate-900 shadow-black">
             <figure>
                 {/*<img className="w-full rounded-md h-auto invisible sm:visible" src={preview} alt="project image"></img>*/}
             </figure>
@@ -14,8 +14,8 @@ export default function ProjectCard({ project }) {
                 </p>
             </div>
             <div className="px-6 pt-2 flex flex-row justify-center">
-                <a href={repo} target="_blank" rel="noreferrer"><span className="inline-block mr-2 bg-gray-700 hover:bg-gray-500 text-white font-semibold py-2 px-4 border border-gray-600 rounded shadow">GitHub</span></a>
-                <a href={deployment} target="_blank" rel="noreferrer"><span className="inline-block bg-gray-700 hover:bg-gray-500 text-white font-semibold py-2 px-4 border border-gray-600 rounded shadow">Deployed Link</span></a>
+                <a href={repo} target="_blank" rel="noreferrer"><span className="inline-block mr-2 bg-gray-700 hover:bg-gray-500 text-white font-semibold py-2 px-4 border border-gray-600 rounded ease-linear duration-150 transition-colors">GitHub</span></a>
+                <a href={deployment} target="_blank" rel="noreferrer"><span className="inline-block bg-gray-700 hover:bg-gray-500 text-white font-semibold py-2 px-4 border border-gray-600 rounded ease-linear duration-150 transition-colors">Deployed Link</span></a>
             </div>
             <div className="px-6 pt-4 pb-2 flex flex-row justify-center">
                 {tags.map((tag, index) => (
