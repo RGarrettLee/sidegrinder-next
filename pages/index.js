@@ -1,8 +1,11 @@
 import Link from 'next/link';
-import { useEffect, useState, Fragment } from 'react';
+import { useEffect, useState, Fragment, useCallback } from 'react';
 import { Tab } from '@headlessui/react';
+import Particles from 'react-particles';
+import { loadFull } from 'tsparticles';
 
 import supabase from '../db/connection';
+import exportOptions from '../utils/particles';
 
 export default function Home() {
 
@@ -13,40 +16,59 @@ export default function Home() {
     'Back-End': ['Express.js', 'Flask', 'FastAPI', 'MySQL', 'MongoDB', 'GraphQL']
   });
 
+  const particlesInit = useCallback(async engine => {
+    console.log(engine);
+    await loadFull(engine);
+  }, []);
+
+  const particlesLoaded = useCallback(async container => {
+    await console.log(container);
+  }, []);
+
+  useEffect(() => {
+    console.log(exportOptions());
+  }, [])
+
   return (
     <>
-        <div className="flex flex-col justify-center text-center mt-44">
-          <h1 className='text-2xl font-semibold'>Garrett Lee</h1>
-          <h2 className='text-xl font-thin mt-1'>Full-Stack Developer</h2>
-          <div className='flex flex-row justify-center items-center gap-4 sm:gap-14 mt-10'>
-            <Link href='portfolio'><button className='font-semibold py-4 px-12 bg-gradient-to-br from-gray-600 to-gray-900 hover:animate-pulse w-40 rounded-lg shadow-md shadow-black'>Portfolio</button></Link>
-            <img className='hidden sm:block rounded-full h-full p-0.5 bg-gradient-to-tl from-blue-600 via-rose-700 via-purple-900 via-red-500 to-blue-600 animate-gradient' src={pfp}></img>
-            <a target='_blank' rel='noreferrer' href='https://read.cv/rgarrettlee'><button className='font-semibold py-4 px-12 bg-gradient-to-bl from-gray-600 to-gray-900 hover:animate-pulse w-40 rounded-lg shadow-md shadow-black'>Resume</button></a>
-          </div>
-          <div className='mt-6'>
-            <h2 className='text-lg font-semibold'>Proficiencies</h2>
-            <Tab.Group as='div' className='mt-1 flex flex-col items-center mb-4'>
-              <Tab.List className='flex gap-3 justify-center bg-gradient-to-t from-gray-600 p-2 rounded-lg shadow-md shadow-black'>
-                {Object.keys(skills).map((prof, index) => (
-                  <Tab as={Fragment} key={index} className='p-2 rounded-lg'>
-                  {({ selected }) => (
-                    <button className={selected ? 'bg-gray-900 focus:outline-none focus:ring-2 ring-gray-300 ease-linear duration-150 transition-colors' : 'hover:bg-gray-500 ease-linear duration-150 transition-colors'}>{prof}</button>
-                  )}
-                </Tab>
-                ))}
-              </Tab.List>
-              <Tab.Panels className='flex justify-center'>
-                {Object.keys(skills).map((skill, index) => (
-                  <Tab.Panel className='bg-gradient-to-b from-gray-600 to-gray-900 p-4 mt-2 w-72 rounded-lg shadow-md shadow-black' key={index}>
-                    {skills[skill].map((skill, index) => (
-                      <h3 className='text-md font-thin text-xl' key={index}>{skill}</h3>
-                    ))}
-                  </Tab.Panel>
-                ))}
-              </Tab.Panels>
-            </Tab.Group>
-          </div>
+      <Particles 
+        id='tsparticles'
+        init={particlesInit}
+        loaded={particlesLoaded}
+        options={exportOptions()}
+      />
+      <div className="flex flex-col justify-center text-center mt-44">
+        <h1 className='text-2xl font-semibold'>Garrett Lee</h1>
+        <h2 className='text-xl font-thin mt-1'>Full-Stack Developer</h2>
+        <div className='flex flex-row justify-center items-center gap-4 sm:gap-14 mt-10'>
+          <Link href='portfolio'><button className='font-semibold py-4 px-12 bg-gradient-to-br from-gray-600 to-black hover:animate-pulse w-40 rounded-lg shadow-md shadow-black'>Portfolio</button></Link>
+          <img className='hidden sm:block rounded-full h-full p-0.5 bg-gradient-to-tl from-blue-600 via-rose-700 via-purple-900 via-red-500 to-blue-600 animate-gradient' src={pfp}></img>
+          <a target='_blank' rel='noreferrer' href='https://read.cv/rgarrettlee'><button className='font-semibold py-4 px-12 bg-gradient-to-bl from-gray-600 to-black hover:animate-pulse w-40 rounded-lg shadow-md shadow-black'>Resume</button></a>
         </div>
+        <div className='mt-6'>
+          <h2 className='text-lg font-semibold'>Proficiencies</h2>
+          <Tab.Group as='div' className='mt-1 flex flex-col items-center mb-4'>
+            <Tab.List className='flex gap-3 justify-center bg-gradient-to-t from-gray-600 p-2 rounded-lg shadow-md shadow-black'>
+              {Object.keys(skills).map((prof, index) => (
+                <Tab as={Fragment} key={index} className='p-2 rounded-lg'>
+                {({ selected }) => (
+                  <button className={selected ? 'bg-black focus:outline-none focus:ring-2 ring-gray-300 ease-linear duration-150 transition-colors' : 'hover:bg-gray-500 ease-linear duration-150 transition-colors'}>{prof}</button>
+                )}
+              </Tab>
+              ))}
+            </Tab.List>
+            <Tab.Panels className='flex justify-center'>
+              {Object.keys(skills).map((skill, index) => (
+                <Tab.Panel className='bg-gradient-to-b from-gray-600 p-4 mt-2 w-72 rounded-lg shadow-md shadow-black' key={index}>
+                  {skills[skill].map((skill, index) => (
+                    <h3 className='text-md font-thin text-xl' key={index}>{skill}</h3>
+                  ))}
+                </Tab.Panel>
+              ))}
+            </Tab.Panels>
+          </Tab.Group>
+        </div>
+      </div>
     </>
   )
 }

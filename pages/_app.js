@@ -3,6 +3,7 @@ import React from 'react';
 import Head from 'next/head';
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
+import particle from 'particle.js';
 
 import { useEffect, useState } from 'react';
 import supabase from '../db/connection';
@@ -25,7 +26,7 @@ function MyApp({ Component, pageProps }) {
           })
       }
       getUser();
-  }, [])
+  }, []);
 
   return (
     <div className='flex flex-col min-h-screen'>
