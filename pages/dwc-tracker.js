@@ -104,7 +104,7 @@ export default function DWCTracker() {
                                     <button className='hover:cursor-default font-normal px-2'>{getEvolutionMethod(stage, tree, pos)}</button>
                                     {/* create component for stat tracking (state and css) */}
                                     <DigimonStats method={getEvolutionMethod(stage, tree, pos)}></DigimonStats>
-                                    <button onClick={() => removeDigimon(index, pos)} className="mx-2 bg-red-600 hover:bg-red-500 rounded rounded-border px-2 py-1">Remove Digimon</button>
+                                    <button onClick={() => removeDigimon(index, pos)} className="mx-2 mt-1 md:mt-0 bg-red-600 hover:bg-red-500 rounded rounded-border px-2 py-1">Remove Digimon</button>
                               </li>
                            </div>
                         ))}

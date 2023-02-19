@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import React from 'react';
 import Head from 'next/head';
 import Navbar from '../components/navbar';
+import Footer from '../components/footer';
 
 import { useEffect, useState } from 'react';
 import supabase from '../db/connection';
@@ -27,13 +28,14 @@ function MyApp({ Component, pageProps }) {
   }, [])
 
   return (
-    <>
+    <div className='flex flex-col min-h-screen'>
       <Head>
         <title>Garrett Lee</title>
       </Head>
       <Navbar user={user}></Navbar>
       <Component {...pageProps} />
-    </>
+      <Footer />
+    </div>
   )
 }
 

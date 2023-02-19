@@ -74,7 +74,7 @@ export default function CardTable({ cards }) {
     return (
         <div className="flex justify-center">
         {cards[0]?.name ? (
-            <table className='table-fixed'>
+            <table className='table-fixed mb-4'>
             <tbody>
                 <tr className="bg-gray-200 text-black" align="center">
                     <td className="border-gray-800 border-2 px-1" width="137" height="40">
