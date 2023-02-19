@@ -1,7 +1,7 @@
 export default function Resume() {
     return (
         <>
-            <h1 className="text-center text-2xl">Resume</h1>
+            <h2 className="text-center text-2xl">Resume</h2>
             <div className="text-center grid grid-cols-2 mt-10">
                 <div>
                     <h2 className="font-thin text-xl">Front-End Skills</h2>

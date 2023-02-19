@@ -83,7 +83,7 @@ export default function DWCTracker() {
    return (
       <>
          <div className='flex justify-center align-center flex-col'>
-            <h1 className='text-center text-2xl'>Digimon World Championship Tracker</h1>
+            <h2 className='text-center text-2xl'>Digimon World Championship Tracker</h2>
             <p className='text-center text-md font-light'>Track digivolutions with ease</p>
             <DigimonDropdown digiList={freshDigimon} trees={trees} setTrees={setTrees}></DigimonDropdown>
          </div>

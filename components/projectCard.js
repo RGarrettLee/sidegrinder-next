@@ -1,5 +1,4 @@
 
-
 export default function ProjectCard({ project }) {
     const { name, description, preview, repo, deployment, tags } = project;
 

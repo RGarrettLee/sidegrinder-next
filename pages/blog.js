@@ -6,7 +6,7 @@ export default function Blog() {
 
    return (
       <>
-         <h1 className='text-center text-2xl'>Blog WIP</h1>
+         <h2 className='text-center text-2xl'>Blog WIP</h2>
          <p className='mt-4 text-center font-thin text-lg'>create article page and user auth for seeing *create article*</p>
       </>
    )

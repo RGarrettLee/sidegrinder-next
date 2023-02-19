@@ -1,17 +1,13 @@
-import RandomClip from '../components/randomClip';
+
 
 export default function Home() {
 
   return (
-      <div>
-        <div className="flex justify-center align-center flex-col pb-20">
-          <h1 className="text-3xl text-center font-bold">Sidegrinder.APP</h1>
+      <>
+        <div className="flex justify-center align-center flex-col pb-20 bg-black">
+          <h1 className="text-3xl text-center font-bold">⚠️ Site Undergoing Redesign ⚠️</h1>
+          <h2 className='text-center font-thin text-xl'>Feel free to use the web-apps while this part of the site is under construction</h2>
         </div>
-        <RandomClip></RandomClip>
-        <div className="flex justify-center flex-col">
-          <h1 className="pt-20 text-center text-2xl">⚠️ Site Under Development ⚠️</h1>
-          <h1 className="text-center text-md font-thin">Cry at the lack of mobile support</h1>
-        </div>
-    </div>
+    </>
   )
 }

@@ -26,9 +26,10 @@ export default function Portfolio() {
     return (
         <div>
             <div className="flex justify-center py-15 flex-col">
-                <h1 className="text-center text-2xl">My Portfolio</h1>
+                <h2 className="text-center text-2xl">My Portfolio</h2>
             </div>
-            <Link href='resume'><button className="block mx-auto mt-4 bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-gray-500 rounded">Resume</button></Link>
+            {/*<Link href='resume'><button className="block mx-auto mt-4 bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-gray-500 rounded">Resume</button></Link>*/}
+            <p className='text-center font-thin text-lg'>The site is undergoing a design revamp, but this is here for prospective employers</p>
             <div className="pt-12 px-40 grid sm:grid-cols-1 md:grid-cols-3 gap-4">
                 {projects.map((project, index) => (
                     <ProjectCard project={project} key={`project ${index}`}></ProjectCard>

@@ -15,7 +15,7 @@ export default function Apps() {
 
    return (
       <>
-         <h1 className="text-center text-2xl">Apps hosted on this site</h1>
+         <h2 className="text-center text-2xl">Apps hosted on this site</h2>
          <div className="flex justify-center">
             <ul className="text-center mt-5">
                {apps.map((app, index) => (

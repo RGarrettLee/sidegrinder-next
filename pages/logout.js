@@ -16,7 +16,7 @@ export default function Logout() {
 
       return (
         <div>
-            <h1 className="text-center text-2xl">logging out...</h1>
+            <h2 className="text-center text-2xl">logging out...</h2>
         </div>
       )
 }

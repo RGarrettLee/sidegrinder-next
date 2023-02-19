@@ -20,11 +20,11 @@ export default function Feedback() {
     return (
         <div>
             <div className="flex justify-center align-center py-15 flex-col">
-                <h1 className="text-3xl font-bold text-center">Help us improve</h1>
+                <h2 className="text-3xl font-bold text-center">Help us improve</h2>
             </div>
             <div className="flex mx-auto items-center justify-center shadow-lg py-10 mb-4 max-w-lg">
                 <form onSubmit={onSubmit} className="w-full max-w-xl bg-black rounded-lg px-4 pt-2">
-                    <h2 className="px-4 pt-3 text-white text-lg">Leave some feedback</h2>
+                    <h3 className="px-4 pt-3 text-white text-lg">Leave some feedback</h3>
                     <div className="w-full md:w-full px-3 mb-2 mt-2">
                         <textarea className="bg-black rounded border border-gray-400 leading-normal resize-none w-full h-20 py-2 px-3 font-medium placeholder-white focus:outline-none" placeholder="Type something..." name="feedback" required value={feedback} onChange={updateFeedback}></textarea>
                     </div>

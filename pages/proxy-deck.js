@@ -19,7 +19,7 @@ export default function ProxyDeck() {
 
    return (
       <div>
-         <h1 className="text-center text-2xl">Digimon Proxy Tracking</h1>
+         <h2 className="text-center text-2xl">Digimon Proxy Tracking</h2>
          <p className="text-center font-light text-md">Keep track of your inheritable effects without hassle</p>
          <button onClick={newStack} className="block mt-4 mb-4 mx-auto bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-gray-500 rounded">New Stack</button>
          <div className='grid grid-flow-row auto-rows-max justify-center mb-4'>
