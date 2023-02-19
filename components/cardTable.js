@@ -72,7 +72,7 @@ export default function CardTable({ cards }) {
     }, [cards]);
 
     return (
-        <div className="block">
+        <div className="flex justify-center">
         {cards[0]?.name ? (
             <table className='table-fixed'>
             <tbody>
