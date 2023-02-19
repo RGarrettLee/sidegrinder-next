@@ -8,7 +8,7 @@ you may also reach/contact me through my website if you have any inquiries
 
 [Visit the site here](https://garrettlee.ca/)
 
---
+---
 
 ## Tech Stack
 
@@ -23,7 +23,7 @@ you may also reach/contact me through my website if you have any inquiries
 - Vercel
 - MySQL
 
---
+---
 
 ## Current hosted web-apps
 
