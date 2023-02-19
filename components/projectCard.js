@@ -3,7 +3,7 @@ export default function ProjectCard({ project }) {
     const { name, description, preview, repo, deployment, tags } = project;
 
     return (
-        <div className="max-w-sm sm:w-auto rounded-lg overflow-hidden shadow-md bg-gradient-to-t from-slate-800 to-slate-900 shadow-black">
+        <div className="max-w-sm sm:w-auto rounded-lg overflow-hidden shadow-md bg-gradient-to-tl from-gray-700 shadow-black">
             <figure>
                 {/*<img className="w-full rounded-md h-auto invisible sm:visible" src={preview} alt="project image"></img>*/}
             </figure>

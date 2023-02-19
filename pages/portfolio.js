@@ -29,7 +29,7 @@ export default function Portfolio() {
                 <h2 className="text-center text-2xl">My Portfolio</h2>
             </div>
             {/*<Link href='resume'><button className="block mx-auto mt-4 bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-gray-500 rounded">Resume</button></Link>*/}
-            <p className='text-center font-thin text-lg'>The site is undergoing a design revamp, but this is here for prospective employers</p>
+            <p className='text-center font-thin text-lg'></p>
             <div className="flex flex-col items-center gap-4 py-12">
                 {projects.map((project, index) => (
                     <ProjectCard project={project} key={`project ${index}`}></ProjectCard>
