@@ -3,13 +3,9 @@ import React from 'react';
 import Head from 'next/head';
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
-import particle from 'particle.js';
 
 import { useEffect, useState } from 'react';
 import supabase from '../db/connection';
-
-// pass in user here to have it carry through all pages and use it finally for stuff?
-// pass into navbar as a prop
 
 function MyApp({ Component, pageProps }) {
 
@@ -32,6 +28,12 @@ function MyApp({ Component, pageProps }) {
     <div className='flex flex-col min-h-screen'>
       <Head>
         <title>Garrett Lee</title>
+        <meta charset='UTF-8' />
+        <meta name='description' content='A portfolio page and platform for hosting various web-apps by Garrett Lee'/>
+        <meta name='author' content='Garrett Lee' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <meta name='keywords' content='Garrett, Lee, Garrett Lee, Resume, Portfolio, Full-Stack, Developer' />
+        <meta name='og:image' content='' />
       </Head>
       <Navbar user={user}></Navbar>
       <Component {...pageProps} />

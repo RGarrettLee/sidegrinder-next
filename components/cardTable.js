@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 export default function CardTable({ cards }) {
-    const [types, setTypes] = useState({
+    const [types] = useState({
         'Monster/Effect': 'bg-orange-500 text-black',
         'Monster/Flip': 'bg-orange-500 text-black',
         'Monster/Effect/Pendulum': 'bg-orange-500 text-black',
@@ -20,7 +20,7 @@ export default function CardTable({ cards }) {
         'Spell': 'bg-teal-600 text-black'
     });
 
-    const [orderedCards, setOrderedCards] = useState([
+    const [orderedCards] = useState([
         {'Monster': []},
         {'Monster/Tuner': []},
         {'Monster/Pendulum': []},

@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react';
-import { useRouter } from 'react';
+import { useState } from 'react';
 
 export default function CreateStack() {
    const apiEndpoint = 'https://digimoncard.io/api-public/search.php?card='

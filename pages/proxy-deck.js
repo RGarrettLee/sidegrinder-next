@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import CreateStack from '../components/createStack.js'
 
 export default function ProxyDeck() {

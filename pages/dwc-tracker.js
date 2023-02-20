@@ -3,22 +3,6 @@ import supabase from '../db/connection';
 import DigimonStats from '../components/digimonStats';
 import DigimonDropdown from '../components/digimonDropdown';
 
-/*
-
-FLOW OF THE PAGE
-- present users with a button to create new evo line to follow
-- name digimon / ask for number of egg reverts
-- create dropdown menu for each "fresh" digimon
-   - when chosen fresh create menu for all possible evolutions of it and so on for each after in-training -> rookie -> champion -> ultimate -> mega
-- display evolution requirements for each stage with tracking
-   - ex. 50 Virus AP [ 0 ] + [ number input ] 
-- add "Next Stage" button for when the digimon is onto the next stage
-
-*/
-
-//TODO
-// add stat tracking
-
 export default function DWCTracker() {
    const [digimon, setDigimon] = useState([]);
    const [freshDigimon, setFreshDigimon] = useState([]);

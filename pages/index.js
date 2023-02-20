@@ -1,10 +1,9 @@
 import Link from 'next/link';
-import { useEffect, useState, Fragment, useCallback } from 'react';
+import { useState, Fragment, useCallback } from 'react';
 import { Tab } from '@headlessui/react';
 import Particles from 'react-particles';
 import { loadFull } from 'tsparticles';
 
-import supabase from '../db/connection';
 import exportOptions from '../utils/particles';
 
 export default function Home() {
@@ -25,10 +24,6 @@ export default function Home() {
     await console.log(container);
   }, []);
 
-  useEffect(() => {
-    console.log(exportOptions());
-  }, [])
-
   return (
     <>
       <Particles 
@@ -37,12 +32,12 @@ export default function Home() {
         loaded={particlesLoaded}
         options={exportOptions()}
       />
-      <div className="flex flex-col justify-center text-center mt-44">
+      <div className="flex flex-col justify-center text-center mt-28 sm:mt-auto">
         <h1 className='text-2xl font-semibold'>Garrett Lee</h1>
         <h2 className='text-xl font-thin mt-1'>Full-Stack Developer</h2>
         <div className='flex flex-row justify-center items-center gap-4 sm:gap-14 mt-10'>
           <Link href='portfolio'><button className='font-semibold py-4 px-12 bg-gradient-to-br from-gray-600 to-black hover:animate-pulse w-40 rounded-lg shadow-md shadow-black'>Portfolio</button></Link>
-          <img className='hidden sm:block rounded-full h-full p-0.5 bg-gradient-to-tl from-blue-600 via-rose-700 via-purple-900 via-red-500 to-blue-600 animate-gradient' src={pfp}></img>
+          <img className='hidden sm:block rounded-full h-full p-0.5 bg-gradient-to-tl from-blue-600 via-rose-700 via-purple-900 via-red-500 to-blue-600 animate-gradient' src={pfp} alt='pfp'></img>
           <a target='_blank' rel='noreferrer' href='https://read.cv/rgarrettlee'><button className='font-semibold py-4 px-12 bg-gradient-to-bl from-gray-600 to-black hover:animate-pulse w-40 rounded-lg shadow-md shadow-black'>Resume</button></a>
         </div>
         <div className='mt-6'>
