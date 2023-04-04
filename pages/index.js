@@ -32,7 +32,7 @@ export default function Home() {
         loaded={particlesLoaded}
         options={exportOptions()}
       />
-      <div className="flex flex-col justify-center text-center mt-28 sm:mt-auto">
+      <div className="flex flex-col justify-center text-center sm:mt-auto">
         <h1 className='text-2xl font-semibold'>Garrett Lee</h1>
         <h2 className='text-xl font-thin mt-1'>Full-Stack Developer</h2>
         <div className='flex flex-row justify-center items-center gap-4 sm:gap-14 mt-10'>
@@ -40,7 +40,7 @@ export default function Home() {
           <img className='hidden sm:block rounded-full h-full p-0.5 bg-gradient-to-tl from-blue-600 via-rose-700 via-purple-900 via-red-500 to-blue-600 animate-gradient' src={pfp} alt='pfp'></img>
           <a target='_blank' rel='noreferrer' href='https://read.cv/rgarrettlee'><button className='font-semibold py-4 px-12 bg-gradient-to-bl from-gray-600 to-black hover:animate-pulse w-40 rounded-lg shadow-md shadow-black'>Resume</button></a>
         </div>
-        <div className='mt-6'>
+        <div className='mt-6 sm:h-72'>
           <h2 className='text-lg font-semibold'>Proficiencies</h2>
           <Tab.Group as='div' className='mt-1 flex flex-col items-center mb-4'>
             <Tab.List className='flex gap-3 justify-center bg-gradient-to-t from-gray-600 p-2 rounded-lg shadow-md shadow-black'>
