@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }) {
     <div className='flex flex-col min-h-screen'>
       <Head>
         <title>Garrett Lee</title>
-        <meta charset='UTF-8' />
+        <meta charSet='UTF-8' />
         <meta name='description' content='A portfolio page and platform for hosting various web-apps by Garrett Lee'/>
         <meta name='author' content='Garrett Lee' />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
