@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      cursor: {
+        'monsac': 'url(../public/monsac.cur), default'
+      },
       'animation': {
         'gradient': 'gradient 2s ease-in-out infinite',
         'fade-in': 'fade-in 1.5s ease-in'
@@ -29,6 +32,13 @@ module.exports = {
             'opacity': 1
           }
         }
+      },
+      fontFamily: {
+        vcrosdneue: ["VCRosdNEUE", "sans-serif"],
+        minecraftia: ["Minecraftia", "serif"],
+        zpix: ["Zpix", "serif"],
+        pixelmplus10: ["PixelMplus10"],
+        pixelmplus12: ["PixelMplus12"]
       },
     },
   },

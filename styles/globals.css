@@ -2,6 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Minecraftia";
+  src: url("../public/fonts/Minecraftia-Regular.ttf");
+}
+
+@font-face {
+  font-family: "VCRosdNEUE";
+  src: url("../public/fonts/VCRosdNEUE.ttf");
+}
+
+@font-face {
+  font-family: "Zpix";
+  src: url("../public/fonts/Zpix.ttf");
+}
+
+@font-face {
+  font-family: "PixelMplus10";
+  src: url("../public/fonts/PixelMplus10-Regular.ttf");
+}
+
+@font-face {
+  font-family: "PixelMplus12";
+  src: url("../public/fonts/PixelMplus12-Regular.ttf");
+}
+
 html,
 body {
   padding: 0;
