@@ -8,8 +8,8 @@ export default function Apps() {
       setApps([
          {link: 'chaos-format', name: 'Chaos Format'},
          {link: 'proxy-deck', name: 'Proxy Tracking'},
-         {link: 'dwc-tracker', name: 'Digimon World Championship Tracker'}
-         // {link: 'memory-gauge', name: 'Memory Gauge'}
+         {link: 'dwc-tracker', name: 'Digimon World Championship Tracker'},
+         {link: 'monsac-team-builder', name: 'Monster Sanctuary Team Builder'}
       ])
    }, []);
 
