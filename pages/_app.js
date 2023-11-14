@@ -12,16 +12,28 @@ function MyApp({ Component, pageProps }) {
   const [user, setUser] = useState({});
 
   useEffect(() => {
-      async function getUser() {
-          await supabase.auth.getUser().then((value) => {
-              if (value.data?.user) {
-                  setUser(value.data.user);
-              } else {
-                  setUser({});
-              }
+    async function getUser() {
+      let auth = {};
+      await supabase.auth.getUser().then((value) => {
+        if (value.data?.user) {
+          auth = value.data.user;
+          console.log(auth);
+        }
+      })
+
+      if (auth !== {}) {
+        await supabase.from('profiles').select('id, full_name, avatar_url, admin')
+          .then((result) => {
+            result.data.map((user) => {
+              if (user.id === auth.id) {
+                setUser(user);
+              } 
+            }) 
           })
       }
-      getUser();
+    }
+
+    getUser();
   }, []);
 
   return (
@@ -36,7 +48,7 @@ function MyApp({ Component, pageProps }) {
         <meta name='og:image' content='' />
       </Head>
       <Navbar user={user}></Navbar>
-      <Component {...pageProps} />
+      <Component {...pageProps} user={user} />
       <Footer />
     </div>
   )

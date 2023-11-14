@@ -9,7 +9,8 @@ export default function Apps() {
          {link: 'chaos-format', name: 'Chaos Format'},
          {link: 'proxy-deck', name: 'Proxy Tracking'},
          {link: 'dwc-tracker', name: 'Digimon World Championship Tracker'},
-         {link: 'monsac-builder', name: 'Monster Sanctuary Team Builder'}
+         {link: 'monsac-builder', name: 'Monster Sanctuary Team Builder'},
+         {link: 'nongmanager', name: 'NONG Manager'}
       ])
    }, []);
 
