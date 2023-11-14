@@ -73,7 +73,7 @@ export default function NONGManager({ user }) {
       <div>
          <h2 className='text-2xl text-center'>NONG Manager</h2>
          <p className='text-center text-md font-light'>Manage your NONG songs on Geometry Dash with ease</p>
-         <a href='https://github.com/RGarrettLee/nong-manager' target='_blank' rel='noreferrer'><button className="block mt-4 mb-8 mx-auto bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-gray-500 rounded">Download</button></a>
+         <button className="block mt-4 mb-8 mx-auto bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-gray-500 rounded"><a href='https://github.com/RGarrettLee/nong-manager' target='_blank' rel='noreferrer'>Download</a></button>
          <div className='flex flex-col items-center mt-4'>
             <div className='flex flex-col bg-gray-800 px-4 py-2 rounded-xl my-2'>
                <label className='text-center' htmlFor='search'>Search</label>

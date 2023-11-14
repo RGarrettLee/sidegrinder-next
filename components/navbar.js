@@ -9,7 +9,7 @@ const Navbar = function({ user }) {
                 {/*<Link href='blog'><li className="hover:text-blue-200 inline px-2">blog</li></Link>*/}
                 <Link href='apps'><li className="hover:text-blue-200 inline px-2">apps</li></Link>
                 {/*<Link href='portfolio'><li className="hover:text-blue-200 inline px-2">portfolio</li></Link>*/}
-                {!user.email ? (
+                {!user.full_name ? (
                     <Link href='login'><li className="hover:text-blue-200 inline px-2">login</li></Link>
                 ) : (
                     <Link href='logout'><li className="hover:text-blue-200 inline px-2">logout</li></Link>
