@@ -10,7 +10,8 @@ export default function Apps() {
          {link: 'proxy-deck', name: 'Proxy Tracking'},
          {link: 'dwc-tracker', name: 'Digimon World Championship Tracker'},
          {link: 'monsac-builder', name: 'Monster Sanctuary Team Builder'},
-         {link: 'nongmanager', name: 'NONG Manager'}
+         {link: 'nongmanager', name: 'NONG Manager'},
+         {link: 'pushup-leaderboard', name: 'Pushups Leaderboard'}
       ])
    }, []);
 
