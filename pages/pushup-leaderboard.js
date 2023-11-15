@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import supabase from '../db/connection';
 
 export default function PushupLeaderboard({ user }) {
-   const { full_name } = user;
+   const { id, full_name } = user;
    const [players, setPlayers] = useState([]);
    const [player, setPlayer] = useState({});
    const [count, setCount] = useState(0);
@@ -33,7 +33,7 @@ export default function PushupLeaderboard({ user }) {
    }, [full_name, added]);
 
    async function joinLeaderboard() {
-      const { error } = await supabase.from('pushups').insert({ name: full_name, pushups: 0 })
+      const { error } = await supabase.from('pushups').insert({ name: full_name, pushups: 0, uid: id })
       router.reload(window.location.pathname);
    }
 
