@@ -39,7 +39,12 @@ export default function PushupLeaderboard({ user }) {
 
    async function updateLeaderboard() {
       let newPushups = parseInt(player.pushups) + parseInt(count);
-      const { error } = await supabase.from('pushups').update({ pushups: newPushups }).eq('name', full_name);
+      if (Number.isInteger(newPushups)) {
+         const { error } = await supabase.from('pushups').update({ pushups: newPushups }).eq('name', full_name);
+      } else {
+         console.log('OK BUDDY');
+      }
+
       router.reload(window.location.pathname);
    }
 
