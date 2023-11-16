@@ -33,8 +33,13 @@ export default function PushupLeaderboard({ user }) {
    }, [full_name, added]);
 
    async function joinLeaderboard() {
-      const { error } = await supabase.from('pushups').insert({ name: full_name, pushups: 0, uid: id })
-      router.reload(window.location.pathname);
+      if (!id) {
+         console.log(`${window.location.origin}/login`);
+         router.push(`${window.location.origin}/login`);
+      } else {
+         const { error } = await supabase.from('pushups').insert({ name: full_name, pushups: 0, uid: id })
+         router.reload(window.location.pathname);
+      }
    }
 
    async function updateLeaderboard() {
