@@ -59,7 +59,7 @@ export default function PushupLeaderboard({ user }) {
    return (
       <div className='flex flex-col items-center'>
          <h2 className='text-2xl'>Pushups Leaderboard</h2>
-         <p className='text-md font-light'>See who sucks at the Brawlhalla, but has done a lot of pushups</p>
+         <p className='text-md text-center font-light'>See who sucks at the Brawlhalla, but has done a lot of pushups</p>
 
          {added ? (
             <div className='flex flex-col items-center mt-8'>
