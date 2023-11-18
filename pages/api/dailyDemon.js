@@ -8,9 +8,18 @@ export default function DailyDemon(req, res) {
       res.status(200).json(error);
    }
 
+   async function returnDaily(res) {
+      let d = {};
+      const data = await supabase.from('dailies').select('data').eq('type', 'demon')
+         .then((response) => {
+            d = response.data[0].data;
+         })
+      res.status(200).json(d);
+   }
+
    if (req.body) {
       pushDemon(req.body, res);
    } else {
-      res.status(200).json({response: daily});
+      returnDaily(res);
    }
 }
