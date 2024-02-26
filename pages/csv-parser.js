@@ -131,8 +131,8 @@ export default function CSVStuff() {
    return (
       <>
          <div className='flex flex-col items-center'>
-            <h2 className='text-center text-2xl'>CSV Stuff for Rohit</h2>
-            <h3 className='text-center text-md font-light'>Reload page to parse other files</h3>
+            <h2 className='text-center text-2xl'>Keyword CSV Parser</h2>
+            <h3 className='text-center text-md font-light'>parse csv files with keywords to get the entries you want</h3>
          </div>
          <div className='flex flex-col items-center'>
             {keywords.length === 0 || data.length === 0 ? (
