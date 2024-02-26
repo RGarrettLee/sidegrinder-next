@@ -20,6 +20,9 @@ export default function CSVStuff() {
          type: 'text/csv'
       });
 
+   function parseNew() {
+      window.location.reload();
+   }
       let filename = 'output.csv';
       saveAs(blob, filename);
    }
@@ -194,7 +197,10 @@ export default function CSVStuff() {
                      </div>
                   ) : (
                      <div className='flex flex-col items-center'>
-                        <button onClick={downloadCSV} className='block mt-4 mb-4 mx-auto bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-gray-500 rounded'>Download CSV</button>
+                        <div className='flex gap-12'>
+                           <button onClick={downloadCSV} className='block mt-4 mb-4 mx-auto bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-gray-500 rounded'>Download CSV</button>
+                           <button onClick={parseNew} className='block mt-4 mb-4 mx-auto bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-gray-500 rounded'>Parse another CSV</button>
+                        </div>
                         <table className='table-auto border-separate bg-gray-900 w-5/6 mt-3 mb-4 rounded-lg'>
                            <thead className='border-b border-slate-600'>
                               <tr>
