@@ -11,7 +11,8 @@ export default function Apps() {
          {link: 'dwc-tracker', name: 'Digimon World Championship Tracker'},
          {link: 'monsac-builder', name: 'Monster Sanctuary Team Builder'},
          {link: 'nongmanager', name: 'NONG Manager'},
-         {link: 'pushup-leaderboard', name: 'Pushups Leaderboard'}
+         {link: 'pushup-leaderboard', name: 'Pushups Leaderboard'},
+         {link: 'csv-parser', name: 'Keyword CSV Parser'}
       ])
    }, []);
 
