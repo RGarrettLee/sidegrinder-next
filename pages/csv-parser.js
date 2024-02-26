@@ -79,23 +79,20 @@ export default function CSVStuff() {
       setParsed(true);
 
       let eligibleCompanies = [];
+      let checkHeaders = [];
       let newCSV = '';
+
       for (let i = 0; i < headers.length; i++) {
          if (useHeaders[i]) {
             newCSV += `"${headers[i]}",`;
+         }
+         if (parseHeaders[i]) {
+            checkHeaders.push(i);
          }
       }
       
       newCSV = newCSV.slice(0, -1);
       newCSV += '\n';
-
-      let checkHeaders = [];
-
-      for (let i = 0; i < parseHeaders.length; i++) {
-         if (parseHeaders[i]) {
-            checkHeaders.push(i);
-         }
-      }
 
       for (let i = 0; i < data.length; i++) {
          let entry = data[i];
