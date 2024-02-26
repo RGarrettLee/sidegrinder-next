@@ -156,7 +156,7 @@ export default function CSVStuff() {
                                  </div>
                               ))}
                            </div>
-                           <h2 className='text-2xl mb-4 mt-4'>Select the headers you want to find keywords on</h2>
+                           <h2 className='text-2xl mb-4 mt-4'>Select the headers you want to find keywords in</h2>
                            <div className='flex bg-gray-900 mx-4 my-2 rounded-lg'>
                               {headers.map((header, key) => (
                                  <div className='flex flex-col items-center justify-center my-4' key={key}>
