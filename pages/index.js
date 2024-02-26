@@ -37,7 +37,6 @@ export default function Home() {
         <h2 className='text-xl font-thin mt-1'>Full-Stack Developer</h2>
         <div className='flex flex-row justify-center items-center gap-4 sm:gap-14 mt-10'>
           <Link href='portfolio'><button className='font-semibold py-4 px-12 bg-gradient-to-br from-gray-600 to-black hover:animate-pulse w-40 rounded-lg shadow-md shadow-black'>Portfolio</button></Link>
-          <img className='hidden sm:block rounded-full h-full p-0.5 bg-gradient-to-tl from-blue-600 via-rose-700 via-purple-900 via-red-500 to-blue-600 animate-gradient' src={pfp} alt='pfp'></img>
           <a target='_blank' rel='noreferrer' href='https://read.cv/rgarrettlee'><button className='font-semibold py-4 px-12 bg-gradient-to-bl from-gray-600 to-black hover:animate-pulse w-40 rounded-lg shadow-md shadow-black'>Resume</button></a>
         </div>
         <div className='mt-6 sm:h-72'>
