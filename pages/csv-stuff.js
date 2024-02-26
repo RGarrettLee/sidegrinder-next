@@ -19,14 +19,14 @@ export default function CSVStuff() {
       let blob = new Blob([csv], {
          type: 'text/csv'
       });
-
-   function parseNew() {
-      window.location.reload();
-   }
       let filename = 'output.csv';
       saveAs(blob, filename);
    }
 
+   function parseNew() {
+      window.location.reload();
+   }
+   
    function headerCheckbox(event) {
       let pos = headers.indexOf(event.target.id);
       let use = useHeaders;
